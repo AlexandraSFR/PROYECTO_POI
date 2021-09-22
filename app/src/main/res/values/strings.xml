@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">PANTALLA_REGISTRO</string>
+<string-array name="Carreras">
+    <item>LMAD</item>
+    <item>LM</item>
+    <item>LF</item>
+    <item>LSTI</item>
+    <item>LA</item>
+    <item>LCC</item>
+
+
+</string-array>
+
+
+</resources>
