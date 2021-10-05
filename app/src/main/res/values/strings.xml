@@ -1,6 +1,10 @@
 <resources>
     <string name="app_name">PANTALLA_REGISTRO</string>
-<string-array name="Carreras">
+    <string name="password">Contraseña</string>
+    <string name="login">Iniciar Sesion</string>
+    <string name="register">Registrarte</string>
+    <string name="email">Correo electronico</string>
+    <string-array name="Carreras">
     <item>LMAD</item>
     <item>LM</item>
     <item>LF</item>
