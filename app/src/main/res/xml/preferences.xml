@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+>
+
+    <PreferenceCategory
+        android:textColor="@color/teal_700"
+        android:title="General">
+        <SwitchPreference
+
+            android:defaultValue="false"
+            android:key="theme_preference"
+            android:icon="@drawable/ic_baseline_bedtime_24"
+            android:title="Modo oscuro" />
+        <Preference
+            android:key="backup_preference"
+            android:summary="Generar copia de seguridad"
+            android:icon="@drawable/ic_baseline_backup_24"
+            android:title="Copia de seguridad" />
+        <Preference
+            android:key="backup_preference"
+            android:summary="Historial de chats, Exportar"
+            android:icon="@drawable/ic_baseline_message_24"
+            android:title="Chats" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="Acerca de">
+        <Preference
+
+            android:summary="1.0.0"
+            android:icon="@drawable/ic_baseline_update_24"
+            android:title="Version" />
+        <Preference
+            android:key="contact_preference"
+            android:icon="@drawable/ic_baseline_info_24"
+            android:title="Acerca de Nosotros" />
+        <Preference
+            android:key="help_preference"
+            android:icon="@drawable/ic_baseline_help_outline_24"
+            android:title="Centro de ayuda" />
+        <Preference
+            android:key="policy_preference"
+            android:icon="@drawable/ic_baseline_privacy_tip_24"
+            android:title="Politicas de privacidad" />
+    </PreferenceCategory>
+</PreferenceScreen>
