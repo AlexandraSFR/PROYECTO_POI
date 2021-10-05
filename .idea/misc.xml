@@ -8,27 +8,27 @@
         <entry key="..\:/PANTALLA_REGISTRO/app/src/main/res/layout/activity_main.xml" value="0.12771739130434784" />
         <entry key="..\:/PANTALLA_REGISTRO/app/src/main/res/layout/login_usuario.xml" value="0.20416666666666666" />
         <entry key="..\:/PANTALLA_REGISTRO/app/src/main/res/layout/registro_usuario.xml" value="0.22" />
-<<<<<<< Updated upstream
-        <entry key="..\:/Users/Admin/Documents/GitHub/PROYECTO_POI/app/src/main/res/drawable/ic_baseline_assistant_24.xml" value="0.16018518518518518" />
-        <entry key="..\:/Users/Admin/Documents/GitHub/PROYECTO_POI/app/src/main/res/drawable/ic_baseline_update_24.xml" value="0.16018518518518518" />
-        <entry key="..\:/Users/Admin/Documents/GitHub/PROYECTO_POI/app/src/main/res/layout/registro_usuario.xml" value="0.2957427536231884" />
-        <entry key="..\:/Users/Admin/Documents/GitHub/PROYECTO_POI/app/src/main/res/xml/preferences.xml" value="0.25" />
-=======
         <entry key="..\:/Users/Fernando/Desktop/Universidad/Septimo/POI/PROYECTO_POI/app/src/main/res/drawable/button_rounded.xml" value="0.2890625" />
         <entry key="..\:/Users/Fernando/Desktop/Universidad/Septimo/POI/PROYECTO_POI/app/src/main/res/drawable/button_rounded_border.xml" value="0.2890625" />
-        <entry key="..\:/Users/Fernando/Desktop/Universidad/Septimo/POI/PROYECTO_POI/app/src/main/res/layout/activity_main.xml" value="0.14270833333333333" />
+        <entry key="..\:/Users/Fernando/Desktop/Universidad/Septimo/POI/PROYECTO_POI/app/src/main/res/drawable/gradient.xml" value="0.2890625" />
+        <entry key="..\:/Users/Fernando/Desktop/Universidad/Septimo/POI/PROYECTO_POI/app/src/main/res/drawable/ic_baseline_message_24.xml" value="0.2890625" />
+        <entry key="..\:/Users/Fernando/Desktop/Universidad/Septimo/POI/PROYECTO_POI/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Users/Fernando/Desktop/Universidad/Septimo/POI/PROYECTO_POI/app/src/main/res/layout/add.xml" value="0.153125" />
         <entry key="..\:/Users/Fernando/Desktop/Universidad/Septimo/POI/PROYECTO_POI/app/src/main/res/layout/create_group.xml" value="0.27291666666666664" />
         <entry key="..\:/Users/Fernando/Desktop/Universidad/Septimo/POI/PROYECTO_POI/app/src/main/res/layout/create_hw.xml" value="0.27291666666666664" />
         <entry key="..\:/Users/Fernando/Desktop/Universidad/Septimo/POI/PROYECTO_POI/app/src/main/res/layout/create_subgroup.xml" value="0.27291666666666664" />
+        <entry key="..\:/Users/Fernando/Desktop/Universidad/Septimo/POI/PROYECTO_POI/app/src/main/res/layout/fragment_message.xml" value="0.153125" />
+        <entry key="..\:/Users/Fernando/Desktop/Universidad/Septimo/POI/PROYECTO_POI/app/src/main/res/layout/fragment_profile.xml" value="0.153125" />
         <entry key="..\:/Users/Fernando/Desktop/Universidad/Septimo/POI/PROYECTO_POI/app/src/main/res/layout/group.xml" value="0.27291666666666664" />
         <entry key="..\:/Users/Fernando/Desktop/Universidad/Septimo/POI/PROYECTO_POI/app/src/main/res/layout/login_form.xml" value="0.27291666666666664" />
         <entry key="..\:/Users/Fernando/Desktop/Universidad/Septimo/POI/PROYECTO_POI/app/src/main/res/layout/login_usuario.xml" value="0.27291666666666664" />
         <entry key="..\:/Users/Fernando/Desktop/Universidad/Septimo/POI/PROYECTO_POI/app/src/main/res/layout/main.xml" value="0.27291666666666664" />
         <entry key="..\:/Users/Fernando/Desktop/Universidad/Septimo/POI/PROYECTO_POI/app/src/main/res/layout/messages.xml" value="0.27291666666666664" />
+        <entry key="..\:/Users/Fernando/Desktop/Universidad/Septimo/POI/PROYECTO_POI/app/src/main/res/layout/nav_header.xml" value="0.27291666666666664" />
         <entry key="..\:/Users/Fernando/Desktop/Universidad/Septimo/POI/PROYECTO_POI/app/src/main/res/layout/profile.xml" value="0.27291666666666664" />
-        <entry key="..\:/Users/Fernando/Desktop/Universidad/Septimo/POI/PROYECTO_POI/app/src/main/res/layout/registro_usuario.xml" value="0.14270833333333333" />
+        <entry key="..\:/Users/Fernando/Desktop/Universidad/Septimo/POI/PROYECTO_POI/app/src/main/res/layout/registro_usuario.xml" value="0.25" />
         <entry key="..\:/Users/Fernando/Desktop/Universidad/Septimo/POI/PROYECTO_POI/app/src/main/res/layout/settings.xml" value="0.27291666666666664" />
->>>>>>> Stashed changes
+        <entry key="..\:/Users/Fernando/Desktop/Universidad/Septimo/POI/PROYECTO_POI/app/src/main/res/menu/drawer_menu.xml" value="0.27291666666666664" />
       </map>
     </option>
   </component>

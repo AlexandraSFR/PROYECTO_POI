@@ -1,9 +1,17 @@
 <resources>
-    <string name="app_name">PANTALLA_REGISTRO</string>
+    <string name="app_name">Proyecto-POI</string>
     <string name="password">Contraseña</string>
     <string name="login">Iniciar Sesion</string>
     <string name="register">Registrarte</string>
     <string name="email">Correo electronico</string>
+    <string name="perfil">Perfil</string>
+    <string name="communicate">Comunicacion</string>
+    <string name="chat">Chat</string>
+    <string name="nuevo_grupo">Nuevo grupo</string>
+    <string name="configuracion">Configuracion</string>
+    <string name="compartir">Compartir</string>
+    <string name="navigation_drawer_open">Abrir panel de navegacion</string>
+    <string name="navigation_drawer_close">Close panel de navegacion</string>
     <string-array name="Carreras">
     <item>LMAD</item>
     <item>LM</item>
