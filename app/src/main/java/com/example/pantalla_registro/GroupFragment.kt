@@ -22,7 +22,7 @@ import androidx.fragment.app.Fragment
 import com.google.android.material.navigation.NavigationView
 
 
-class MessageFragment : Fragment(), NavigationView.OnNavigationItemSelectedListener {
+class GroupFragment : Fragment(), NavigationView.OnNavigationItemSelectedListener {
     private lateinit var fragments: MenuItem;
 
     override fun onCreateView(
@@ -30,7 +30,7 @@ class MessageFragment : Fragment(), NavigationView.OnNavigationItemSelectedListe
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.activity_list_of_chats,container,false);
+        return inflater.inflate(R.layout.activity_list_of_groups,container,false);
     }
 
 

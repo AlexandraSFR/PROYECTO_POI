@@ -1,14 +1,12 @@
 package com.example.pantalla_registro
 
+import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.MenuItem
-import android.view.View
+import android.view.*
 import android.view.View.inflate
-import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.EditText
 import android.widget.Spinner
@@ -22,15 +20,16 @@ import androidx.fragment.app.Fragment
 import com.google.android.material.navigation.NavigationView
 
 
-class MessageFragment : Fragment(), NavigationView.OnNavigationItemSelectedListener {
+class SettingsFragment : Fragment(), NavigationView.OnNavigationItemSelectedListener {
     private lateinit var fragments: MenuItem;
 
+    @SuppressLint("ResourceType")
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.activity_list_of_chats,container,false);
+        return inflater.inflate(R.layout.settings,container,false);
     }
 
 
@@ -38,4 +37,6 @@ class MessageFragment : Fragment(), NavigationView.OnNavigationItemSelectedListe
 
         return true
     }
+
+
 }

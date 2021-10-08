@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "888689613465",
+    "project_id": "proyecto-poi-e7c81",
+    "storage_bucket": "proyecto-poi-e7c81.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:888689613465:android:0f8860eb423d60107fb608",
+        "android_client_info": {
+          "package_name": "com.example.pantalla_registro"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "888689613465-o8t5iot05o5h0aapdsb6s36tj4086udv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCL5xQSUkCLPt0vxvrOi4pe20l6YmuqONY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "888689613465-o8t5iot05o5h0aapdsb6s36tj4086udv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
