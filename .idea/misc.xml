@@ -5,7 +5,14 @@
       <map>
         <entry key="..\:/PANTALLA_REGISTRO/app/src/main/res/drawable/button_rounded.xml" value="0.2203125" />
         <entry key="..\:/PANTALLA_REGISTRO/app/src/main/res/drawable/buttonrounded.xml" value="0.2203125" />
+        <entry key="..\:/PANTALLA_REGISTRO/app/src/main/res/layout/activity_list_of_chats.xml" value="0.20416666666666666" />
         <entry key="..\:/PANTALLA_REGISTRO/app/src/main/res/layout/activity_main.xml" value="0.12771739130434784" />
+        <entry key="..\:/PANTALLA_REGISTRO/app/src/main/res/layout/create_group.xml" value="0.20416666666666666" />
+        <entry key="..\:/PANTALLA_REGISTRO/app/src/main/res/layout/create_hw.xml" value="0.20416666666666666" />
+        <entry key="..\:/PANTALLA_REGISTRO/app/src/main/res/layout/group.xml" value="0.20416666666666666" />
+        <entry key="..\:/PANTALLA_REGISTRO/app/src/main/res/layout/item_chat.xml" value="0.20416666666666666" />
+        <entry key="..\:/PANTALLA_REGISTRO/app/src/main/res/layout/item_message.xml" value="0.20416666666666666" />
+        <entry key="..\:/PANTALLA_REGISTRO/app/src/main/res/layout/login_form.xml" value="0.20416666666666666" />
         <entry key="..\:/PANTALLA_REGISTRO/app/src/main/res/layout/login_usuario.xml" value="0.20416666666666666" />
         <entry key="..\:/PANTALLA_REGISTRO/app/src/main/res/layout/registro_usuario.xml" value="0.22" />
         <entry key="..\:/Users/Fernando/Desktop/Universidad/Septimo/POI/PROYECTO_POI/app/src/main/res/drawable/button_rounded.xml" value="0.2890625" />
@@ -43,5 +50,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.20416666666666666" />
+      </ProjectState>
+    </option>
   </component>
 </project>

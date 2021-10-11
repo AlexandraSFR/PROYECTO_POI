@@ -2,10 +2,12 @@ package com.example.pantalla_registro
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.ArrayAdapter
 import android.widget.Button
-import android.widget.Spinner
 import androidx.appcompat.app.AppCompatActivity
+import com.example.pantalla_registro.R
+import com.example.pantalla_registro.activities.ListOfChatsActivity
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 
 class Login : AppCompatActivity() {
 
@@ -20,15 +22,15 @@ class Login : AppCompatActivity() {
 
     }
     private fun initViews(){
-        buttonLogin = findViewById(R.id.button2);
-        buttonRegister = findViewById(R.id.button3);
+        buttonLogin = findViewById(R.id.iniciar_sesion);
+        buttonRegister = findViewById(R.id.registrarse);
 
         buttonLogin.setOnClickListener{ goToMain() }
         buttonRegister.setOnClickListener{ goToRegister() }
     }
 
     private fun goToRegister(){
-        val intent = Intent(this,MainActivity::class.java)
+        val intent = Intent(this, MainActivity::class.java)
         intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT)
         startActivity(intent)
         finish()

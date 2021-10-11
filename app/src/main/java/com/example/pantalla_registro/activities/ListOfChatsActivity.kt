@@ -3,16 +3,11 @@ package com.example.pantalla_registro.activities
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.pantalla_registro.LoginActivity
 import com.example.pantalla_registro.models.Chat
-import com.example.pantalla_registro.adapters.ChatAdapter
-import com.example.pantalla_registro.R
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.ktx.auth
 //import com.google.firebase.firestore.ktx.firestore
-import com.google.firebase.ktx.Firebase
 //import kotlinx.android.synthetic.main.activity_list_of_chats.*
-import java.util.*
 
 class ListOfChatsActivity : AppCompatActivity() {
     private var user = ""
@@ -92,7 +87,7 @@ class ListOfChatsActivity : AppCompatActivity() {
 
     private fun logOut(){
         FirebaseAuth.getInstance().signOut()
-        val intent = Intent(this,LoginActivity::class.java)
+        val intent = Intent(this, LoginActivity::class.java)
         intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT)
         startActivity(intent)
         finish()

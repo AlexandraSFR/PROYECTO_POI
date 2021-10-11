@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.pantalla_registro.models.Chat
 import com.example.pantalla_registro.R
-//import kotlinx.android.synthetic.main.item_chat.view.*
+import kotlinx.android.synthetic.main.item_chat.view.*
 
 
 class ChatAdapter(val chatClick: (Chat) -> Unit): RecyclerView.Adapter<ChatAdapter.ChatViewHolder>() {
@@ -28,12 +28,12 @@ class ChatAdapter(val chatClick: (Chat) -> Unit): RecyclerView.Adapter<ChatAdapt
     }
 
     override fun onBindViewHolder(holder: ChatViewHolder, position: Int) {
-       /* holder.itemView.chatNameText.text = chats[position].name
+        holder.itemView.chatNameText.text = chats[position].name
         holder.itemView.usersTextView.text = chats[position].users.toString()
 
         holder.itemView.setOnClickListener {
             chatClick(chats[position])
-        }*/
+        }
     }
 
     override fun getItemCount(): Int {
