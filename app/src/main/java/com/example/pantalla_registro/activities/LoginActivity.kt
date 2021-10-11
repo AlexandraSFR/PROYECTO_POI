@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.pantalla_registro.R
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
+import android.widget.Button
 //import kotlinx.android.synthetic.main.login_form.*
 
 class LoginActivity : AppCompatActivity() {
