@@ -1,13 +1,14 @@
-package com.example.pantalla_registro.activities
+package com.example.pantalla_registro
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.pantalla_registro.LoginActivity
+import com.example.pantalla_registro.activities.ChatActivity
 import com.example.pantalla_registro.models.Chat
 import com.google.firebase.auth.FirebaseAuth
 //import com.google.firebase.firestore.ktx.firestore
-//import kotlinx.android.synthetic.main.activity_list_of_chats.*
+import com.google.firebase.ktx.Firebase
+import kotlinx.android.synthetic.main.activity_list_of_chats.*
 
 class ListOfChatsActivity : AppCompatActivity() {
     private var user = ""
@@ -16,7 +17,7 @@ class ListOfChatsActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        //setContentView(R.layout.activity_list_of_chats)
+        setContentView(R.layout.activity_list_of_chats)
 
         intent.getStringExtra("user")?.let { user = it }
 
@@ -26,6 +27,7 @@ class ListOfChatsActivity : AppCompatActivity() {
     }
 
     private fun initViews(){
+        logOutButton.setOnClickListener{ logOut() }
         /*newChatButton.setOnClickListener { newChat() }
         logOutButton.setOnClickListener{ logOut() }
 
@@ -87,7 +89,7 @@ class ListOfChatsActivity : AppCompatActivity() {
 
     private fun logOut(){
         FirebaseAuth.getInstance().signOut()
-        val intent = Intent(this, LoginActivity::class.java)
+        val intent = Intent(this, MainActivity::class.java)
         intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT)
         startActivity(intent)
         finish()

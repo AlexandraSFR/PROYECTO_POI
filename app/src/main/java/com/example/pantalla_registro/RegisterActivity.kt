@@ -9,7 +9,7 @@ import android.widget.Button
 import kotlinx.android.synthetic.main.login_form.*
 import android.widget.Toast
 
-class LoginActivity : AppCompatActivity() {
+class RegisterActivity : AppCompatActivity() {
 
     private val auth = Firebase.auth
     private lateinit var buttonRegister: Button;
@@ -20,9 +20,9 @@ class LoginActivity : AppCompatActivity() {
         initViews()
 
         iniciar_sesion.setOnClickListener { loginUser() }
-        registrarse.setOnClickListener { createUser() }
+        //registrarse.setOnClickListener { createUser() }
 
-        checkUser()
+        //checkUser()
     }
     private fun initViews(){
         buttonRegister = findViewById(R.id.registrarse);
@@ -33,7 +33,7 @@ class LoginActivity : AppCompatActivity() {
         val currentUser = auth.currentUser
 
         if(currentUser != null){
-            val intent = Intent(this, MainMenu::class.java)
+            val intent = Intent(this, ListOfChatsActivity::class.java)
             intent.putExtra("user", currentUser.email)
             startActivity(intent)
 
@@ -42,20 +42,20 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun createUser(){
-        val email = correo.text.toString()
-        val password = contra.text.toString()
+        /*val email = emailText.text.toString()
+        val password = passwordText.text.toString()
 
         auth.createUserWithEmailAndPassword(email, password).addOnCompleteListener { task ->
             if(task.isSuccessful){
                 Toast.makeText(applicationContext,"User created. Logging in...",Toast.LENGTH_LONG).show();
-                 checkUser()
+                checkUser()
             } else {
                 task.exception?.let {
                     Toast.makeText(baseContext, it.message, Toast.LENGTH_LONG).show()
                 }
             }
 
-        }
+        }*/
     }
     private fun goToRegistrarse(){
         val intent = Intent(this, MainActivity::class.java)
