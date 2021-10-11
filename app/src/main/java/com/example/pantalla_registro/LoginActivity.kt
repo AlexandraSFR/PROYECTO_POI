@@ -1,27 +1,35 @@
-package com.example.pantalla_registro.activities
+package com.example.pantalla_registro
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Toast
+import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import com.example.pantalla_registro.R
+import com.example.pantalla_registro.activities.ListOfChatsActivity
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import android.widget.Button
 //import kotlinx.android.synthetic.main.login_form.*
+import android.widget.Toast
 
 class LoginActivity : AppCompatActivity() {
 
     private val auth = Firebase.auth
+    private lateinit var buttonRegister: Button;
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.login_form)
+        initViews()
 
-        //loginButton.setOnClickListener { loginUser() }
-        //createButton.setOnClickListener { createUser() }
+       // iniciar_sesion.setOnClickListener { loginUser() }
+        //registrarse.setOnClickListener { createUser() }
 
-        checkUser()
+        //checkUser()
+    }
+    private fun initViews(){
+        buttonRegister = findViewById(R.id.registrarse);
+        buttonRegister.setOnClickListener{ goToRegistrarse() }
     }
 
     private fun checkUser(){
@@ -52,7 +60,12 @@ class LoginActivity : AppCompatActivity() {
 
         }*/
     }
-
+    private fun goToRegistrarse(){
+        val intent = Intent(this, MainActivity::class.java)
+        intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT)
+        startActivity(intent)
+        finish()
+    }
     private fun loginUser(){
         /*val email = emailText.text.toString()
         val password = passwordText.text.toString()
@@ -71,6 +84,8 @@ class LoginActivity : AppCompatActivity() {
         else{
             Toast.makeText(applicationContext,"All fields required",Toast.LENGTH_LONG).show();
         }*/
+
+
 
     }
 }

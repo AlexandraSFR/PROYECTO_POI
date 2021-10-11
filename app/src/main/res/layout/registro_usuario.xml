@@ -36,7 +36,7 @@
         android:id="@+id/imageView2"
         android:layout_width="117dp"
         android:layout_height="117dp"
-        android:layout_marginStart="147dp"
+        android:layout_marginStart="127dp"
         android:layout_marginEnd="147dp"
         android:layout_marginBottom="486dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -118,7 +118,7 @@
         app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/registrar"
         android:layout_width="150dp"
         android:layout_height="60dp"
         android:layout_marginStart="32dp"
@@ -129,13 +129,13 @@
         android:text="REGISTRAR"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/button4"
+        app:layout_constraintEnd_toStartOf="@+id/cancelar"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword2"
         app:layout_constraintVertical_bias="0.0" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/cancelar"
         android:layout_width="150dp"
         android:layout_height="60dp"
         android:layout_marginTop="24dp"
@@ -146,7 +146,7 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/button3"
+        app:layout_constraintStart_toEndOf="@+id/registrar"
         app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword2"
         app:layout_constraintVertical_bias="0.0" />
 
