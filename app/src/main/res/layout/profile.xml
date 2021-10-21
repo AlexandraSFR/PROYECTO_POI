@@ -6,7 +6,7 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/textUsuario"
         android:layout_width="149dp"
         android:layout_height="28dp"
         android:layout_marginTop="24dp"
@@ -15,11 +15,11 @@
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        app:layout_constraintTop_toBottomOf="@+id/textNombre"
         tools:ignore="MissingConstraints" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/textCarrera"
         android:layout_width="149dp"
         android:layout_height="28dp"
         android:layout_marginTop="20dp"
@@ -28,13 +28,13 @@
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5"
+        app:layout_constraintTop_toBottomOf="@+id/textUsuario"
         tools:ignore="MissingConstraints" />
 
     <TextView
-        android:id="@+id/textView4"
-        android:layout_width="149dp"
-        android:layout_height="28dp"
+        android:id="@+id/textCorreo"
+        android:layout_width="312dp"
+        android:layout_height="26dp"
         android:layout_marginTop="20dp"
         android:text="Correo"
         android:textAlignment="center"
@@ -42,7 +42,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3"
+        app:layout_constraintTop_toBottomOf="@+id/textCarrera"
         app:layout_constraintVertical_bias="0.003"
         tools:ignore="MissingConstraints" />
 
@@ -60,9 +60,9 @@
         tools:ignore="MissingConstraints" />
 
     <TextView
-        android:id="@+id/textView2"
-        android:layout_width="149dp"
-        android:layout_height="28dp"
+        android:id="@+id/textNombre"
+        android:layout_width="316dp"
+        android:layout_height="29dp"
         android:layout_marginTop="24dp"
         android:text="Nombre"
         android:textAlignment="center"
@@ -81,6 +81,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+        app:layout_constraintTop_toBottomOf="@+id/textCorreo" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

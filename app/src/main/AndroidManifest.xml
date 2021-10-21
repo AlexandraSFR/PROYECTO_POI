@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".MainActivity"
+            android:name=".activities.RegisterActivity"
             android:exported="true"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -19,22 +19,27 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".activities.GroupActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
         <activity android:name=".Login"
             android:theme="@style/AppTheme.NoActionBar"/>
-        <activity android:name=".LoginActivity"
+        <activity android:name=".activities.LoginActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
-        <activity android:name=".ListOfChatsActivity"
+        <activity android:name=".activities.ListOfChatsActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
-        <activity android:name=".MainMenu"
+        <activity android:name=".Fragment.MainMenu"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
-        <activity android:name=".ProfileFragment"
+        <activity android:name=".activities.ChatActivity"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
-        <activity android:name=".MessageFragment"
+        <activity android:name=".Fragment.ProfileFragment"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
-        <activity android:name=".SettingsFragment"
+        <activity android:name=".Fragment.MessageFragment"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity android:name=".Fragment.SettingsFragment"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
     </application>

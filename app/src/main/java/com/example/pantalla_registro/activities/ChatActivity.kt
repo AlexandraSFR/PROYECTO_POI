@@ -6,19 +6,19 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.pantalla_registro.adapters.MessageAdapter
 import com.example.pantalla_registro.R
 import com.example.pantalla_registro.models.Message
-//import com.google.firebase.firestore.Query
-//import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.firestore.Query
+import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
-//import kotlinx.android.synthetic.main.activity_chat.*
+import kotlinx.android.synthetic.main.activity_chat.*
 
 class ChatActivity : AppCompatActivity() {
     private var chatId = ""
     private var user = ""
 
-    //private var db = Firebase.firestore
+    private var db = Firebase.firestore
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        /*super.onCreate(savedInstanceState)
+        super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_chat)
 
         intent.getStringExtra("chatId")?.let { chatId = it }
@@ -26,11 +26,11 @@ class ChatActivity : AppCompatActivity() {
 
         if(chatId.isNotEmpty() && user.isNotEmpty()) {
             initViews()
-        }*/
+        }
     }
 
     private fun initViews(){
-        /*messagesRecylerView.layoutManager = LinearLayoutManager(this)
+        messagesRecylerView.layoutManager = LinearLayoutManager(this)
         messagesRecylerView.adapter = MessageAdapter(user)
 
         sendMessageButton.setOnClickListener { sendMessage() }
@@ -52,11 +52,11 @@ class ChatActivity : AppCompatActivity() {
                         (messagesRecylerView.adapter as MessageAdapter).setData(listMessages)
                     }
                 }
-            }*/
+            }
     }
 
     private fun sendMessage(){
-       /* val message = Message(
+        val message = Message(
             message = messageTextField.text.toString(),
             from = user
         )
@@ -65,6 +65,6 @@ class ChatActivity : AppCompatActivity() {
 
         messageTextField.setText("")
 
-*/
+
     }
 }

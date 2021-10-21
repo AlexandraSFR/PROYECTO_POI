@@ -20,6 +20,8 @@
         <entry key="..\:/Users/Fernando/Desktop/Universidad/Septimo/POI/PROYECTO_POI/app/src/main/res/drawable/gradient.xml" value="0.2890625" />
         <entry key="..\:/Users/Fernando/Desktop/Universidad/Septimo/POI/PROYECTO_POI/app/src/main/res/drawable/ic_baseline_message_24.xml" value="0.2890625" />
         <entry key="..\:/Users/Fernando/Desktop/Universidad/Septimo/POI/PROYECTO_POI/app/src/main/res/drawable/ic_settings.xml" value="0.28489583333333335" />
+        <entry key="..\:/Users/Fernando/Desktop/Universidad/Septimo/POI/PROYECTO_POI/app/src/main/res/layout/activity_chat.xml" value="0.22146739130434784" />
+        <entry key="..\:/Users/Fernando/Desktop/Universidad/Septimo/POI/PROYECTO_POI/app/src/main/res/layout/activity_group.xml" value="0.22146739130434784" />
         <entry key="..\:/Users/Fernando/Desktop/Universidad/Septimo/POI/PROYECTO_POI/app/src/main/res/layout/activity_list_of_chats.xml" value="0.27291666666666664" />
         <entry key="..\:/Users/Fernando/Desktop/Universidad/Septimo/POI/PROYECTO_POI/app/src/main/res/layout/activity_list_of_groups.xml" value="0.27291666666666664" />
         <entry key="..\:/Users/Fernando/Desktop/Universidad/Septimo/POI/PROYECTO_POI/app/src/main/res/layout/activity_main.xml" value="0.25" />
@@ -31,13 +33,16 @@
         <entry key="..\:/Users/Fernando/Desktop/Universidad/Septimo/POI/PROYECTO_POI/app/src/main/res/layout/fragment_profile.xml" value="0.25" />
         <entry key="..\:/Users/Fernando/Desktop/Universidad/Septimo/POI/PROYECTO_POI/app/src/main/res/layout/group.xml" value="0.27291666666666664" />
         <entry key="..\:/Users/Fernando/Desktop/Universidad/Septimo/POI/PROYECTO_POI/app/src/main/res/layout/item_chat.xml" value="0.16927083333333334" />
+        <entry key="..\:/Users/Fernando/Desktop/Universidad/Septimo/POI/PROYECTO_POI/app/src/main/res/layout/item_group.xml" value="0.22146739130434784" />
         <entry key="..\:/Users/Fernando/Desktop/Universidad/Septimo/POI/PROYECTO_POI/app/src/main/res/layout/item_message.xml" value="0.16927083333333334" />
+        <entry key="..\:/Users/Fernando/Desktop/Universidad/Septimo/POI/PROYECTO_POI/app/src/main/res/layout/login.xml" value="0.22146739130434784" />
         <entry key="..\:/Users/Fernando/Desktop/Universidad/Septimo/POI/PROYECTO_POI/app/src/main/res/layout/login_form.xml" value="0.27291666666666664" />
         <entry key="..\:/Users/Fernando/Desktop/Universidad/Septimo/POI/PROYECTO_POI/app/src/main/res/layout/login_usuario.xml" value="0.27291666666666664" />
         <entry key="..\:/Users/Fernando/Desktop/Universidad/Septimo/POI/PROYECTO_POI/app/src/main/res/layout/main.xml" value="0.27291666666666664" />
         <entry key="..\:/Users/Fernando/Desktop/Universidad/Septimo/POI/PROYECTO_POI/app/src/main/res/layout/messages.xml" value="0.27291666666666664" />
         <entry key="..\:/Users/Fernando/Desktop/Universidad/Septimo/POI/PROYECTO_POI/app/src/main/res/layout/nav_header.xml" value="0.27291666666666664" />
         <entry key="..\:/Users/Fernando/Desktop/Universidad/Septimo/POI/PROYECTO_POI/app/src/main/res/layout/profile.xml" value="0.27291666666666664" />
+        <entry key="..\:/Users/Fernando/Desktop/Universidad/Septimo/POI/PROYECTO_POI/app/src/main/res/layout/registro.xml" value="0.22146739130434784" />
         <entry key="..\:/Users/Fernando/Desktop/Universidad/Septimo/POI/PROYECTO_POI/app/src/main/res/layout/registro_usuario.xml" value="0.25" />
         <entry key="..\:/Users/Fernando/Desktop/Universidad/Septimo/POI/PROYECTO_POI/app/src/main/res/layout/settings.xml" value="0.27291666666666664" />
         <entry key="..\:/Users/Fernando/Desktop/Universidad/Septimo/POI/PROYECTO_POI/app/src/main/res/menu/drawer_menu.xml" value="0.27291666666666664" />

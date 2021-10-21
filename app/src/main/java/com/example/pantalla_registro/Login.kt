@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
+import com.example.pantalla_registro.Fragment.MainMenu
 
 class Login : AppCompatActivity() {
 
@@ -33,7 +34,7 @@ class Login : AppCompatActivity() {
     }
 
     private fun goToMain(){
-        val intent = Intent(this,MainMenu::class.java)
+        val intent = Intent(this, MainMenu::class.java)
         //intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT)
         startActivity(intent)
         finish()

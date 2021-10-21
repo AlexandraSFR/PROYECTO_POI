@@ -8,7 +8,6 @@ import com.example.pantalla_registro.models.Chat
 import com.example.pantalla_registro.R
 import kotlinx.android.synthetic.main.item_chat.view.*
 
-
 class ChatAdapter(val chatClick: (Chat) -> Unit): RecyclerView.Adapter<ChatAdapter.ChatViewHolder>() {
     var chats: List<Chat> = emptyList()
 

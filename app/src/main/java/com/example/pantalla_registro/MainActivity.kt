@@ -7,14 +7,19 @@ import android.os.Bundle
 import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.Spinner
-import android.widget.Toast
+import com.example.pantalla_registro.DAO.UserDAO
+import com.example.pantalla_registro.Fragment.MainMenu
+import com.example.pantalla_registro.activities.LoginActivity
+import com.example.pantalla_registro.models.User
 import com.google.firebase.auth.ktx.auth
+import com.google.firebase.database.*
 import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.registro_usuario.*
 
 
 class MainActivity : AppCompatActivity() {
     private val auth = Firebase.auth
+    private val databaseReference : DatabaseReference = FirebaseDatabase.getInstance().reference
     private lateinit var buttonLogin: Button;
     private lateinit var buttonRegister: Button;
 
@@ -37,40 +42,69 @@ class MainActivity : AppCompatActivity() {
         buttonLogin = findViewById(R.id.cancelar);
         buttonLogin.setOnClickListener{ goToLogin() }
         buttonRegister = findViewById(R.id.registrar);
-        buttonRegister.setOnClickListener{ goToRegister() }
+        buttonRegister.setOnClickListener{ createUser() }
 
     }
     private fun createUser(){
-       // val nombre=editTextTextPersonName3.text.toString()
-      //  val apellidos=editTextTextPersonName4.text.toString()
-       // val usuario=editTextTextPersonName5.text.toString()
+
+        val nombre=editTextTextPersonName3.text.toString()
+        val apellidos=editTextTextPersonName4.text.toString()
+        val usuario=editTextTextPersonName5.text.toString()
         val email = editTextTextEmailAddress.text.toString()
         val password = editTextTextPassword2.text.toString()
+        val carrera = spinner2.selectedItem.toString()
 
-        auth.createUserWithEmailAndPassword(email, password).addOnCompleteListener { task ->
-            if(task.isSuccessful){
-                Toast.makeText(applicationContext,"User created. Logging in...",Toast.LENGTH_LONG).show();
-               // checkUser()
-            } else {
-                task.exception?.let {
-                    Toast.makeText(baseContext, it.message, Toast.LENGTH_LONG).show()
+        val user = User("",nombre,apellidos,email,password,carrera,usuario);
+
+        UserDAO.addUser(user).addOnSuccessListener{
+            databaseReference.child("User").addListenerForSingleValueEvent(object : ValueEventListener{
+                override fun onDataChange(snapshot: DataSnapshot) {
+                    snapshot.children.forEach(){usuario->
+                        val child = usuario.child("email").value.toString();
+                        if(email.equals(child) ){
+                            val idMap : HashMap<String,Any> = HashMap();
+                            idMap.put("id",usuario.key.toString());
+                            UserDAO.update(usuario.key.toString(),idMap);
+                        }
+                    }
                 }
-            }
 
-        }
+                override fun onCancelled(error: DatabaseError) {
+
+                }
+
+            });
+
+        };
+        val intent =Intent(this, LoginActivity::class.java)
+        intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT)
+        startActivity(intent)
+        finish()
     }
     private fun goToLogin(){
-        val intent =Intent(this,LoginActivity::class.java)
+        val intent =Intent(this, LoginActivity::class.java)
         intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT)
         startActivity(intent)
         finish()
     }
 
     private fun goToRegister(){
-        val intent =Intent(this,MainMenu::class.java)
+        val intent =Intent(this, MainMenu::class.java)
         intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT)
         startActivity(intent)
         finish()
+    }
+
+    private fun checkUser(){
+        val currentUser = auth.currentUser
+
+        if(currentUser != null){
+            val intent = Intent(this, MainMenu::class.java)
+            intent.putExtra("user", currentUser.email)
+            startActivity(intent)
+
+            finish()
+        }
     }
 
 

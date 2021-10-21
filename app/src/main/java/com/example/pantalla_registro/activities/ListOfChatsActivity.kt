@@ -1,19 +1,23 @@
-package com.example.pantalla_registro
+package com.example.pantalla_registro.activities
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.pantalla_registro.activities.ChatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.pantalla_registro.models.Chat
+import com.example.pantalla_registro.adapters.ChatAdapter
+import com.example.pantalla_registro.R
+import com.example.pantalla_registro.models.GroupMessage
 import com.google.firebase.auth.FirebaseAuth
-//import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.activity_list_of_chats.*
+import java.util.*
 
 class ListOfChatsActivity : AppCompatActivity() {
     private var user = ""
 
-    //private var db = Firebase.firestore
+    private var db = Firebase.firestore
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,8 +31,8 @@ class ListOfChatsActivity : AppCompatActivity() {
     }
 
     private fun initViews(){
-        logOutButton.setOnClickListener{ logOut() }
-        /*newChatButton.setOnClickListener { newChat() }
+        newChatButton.setOnClickListener { newChat() }
+        GroupChats.setOnClickListener{ gotogroups()}
         logOutButton.setOnClickListener{ logOut() }
 
         listChatsRecyclerView.layoutManager = LinearLayoutManager(this)
@@ -56,7 +60,9 @@ class ListOfChatsActivity : AppCompatActivity() {
                         (listChatsRecyclerView.adapter as ChatAdapter).setData(listChats)
                     }
                 }
-            }*/
+            }
+
+
     }
 
     private fun chatSelected(chat: Chat){
@@ -67,7 +73,7 @@ class ListOfChatsActivity : AppCompatActivity() {
     }
 
     private fun newChat(){
-        /*val chatId = UUID.randomUUID().toString()
+        val chatId = UUID.randomUUID().toString()
         val otherUser = newChatText.text.toString()
         val users = listOf(user, otherUser)
 
@@ -84,14 +90,22 @@ class ListOfChatsActivity : AppCompatActivity() {
         val intent = Intent(this, ChatActivity::class.java)
         intent.putExtra("chatId", chatId)
         intent.putExtra("user", user)
-        startActivity(intent)*/
+        startActivity(intent)
     }
 
     private fun logOut(){
         FirebaseAuth.getInstance().signOut()
-        val intent = Intent(this, MainActivity::class.java)
+        val intent = Intent(this,LoginActivity::class.java)
         intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT)
         startActivity(intent)
+        finish()
+    }
+
+    private  fun gotogroups(){
+        val intent = Intent(this, GroupActivity::class.java)
+        intent.putExtra("user", user)
+        startActivity(intent)
+
         finish()
     }
 }

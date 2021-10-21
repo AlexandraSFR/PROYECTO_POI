@@ -8,6 +8,7 @@ import com.google.firebase.ktx.Firebase
 import android.widget.Button
 import kotlinx.android.synthetic.main.login_form.*
 import android.widget.Toast
+import com.example.pantalla_registro.activities.ListOfChatsActivity
 
 class RegisterActivity : AppCompatActivity() {
 

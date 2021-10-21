@@ -1,23 +1,14 @@
-package com.example.pantalla_registro
+package com.example.pantalla_registro.Fragment
 
-import android.app.Activity
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
-import android.view.View.inflate
-import android.widget.ArrayAdapter
-import android.widget.EditText
-import android.widget.Spinner
-import androidx.annotation.StringRes
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.widget.Toolbar
-import androidx.appcompat.widget.ToolbarWidgetWrapper
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
-import androidx.fragment.app.Fragment
+import com.example.pantalla_registro.*
 import com.google.android.material.navigation.NavigationView
-import com.example.pantalla_registro.MessageFragment as Mess
 
 class MainMenu : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
     private lateinit var tolbar: Toolbar;
@@ -36,11 +27,14 @@ class MainMenu : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLis
         navView.setNavigationItemSelectedListener(this);
         drawer= findViewById(R.id.drawer_layout);
 
-        toggle = ActionBarDrawerToggle(this,drawer,tolbar, R.string.navigation_drawer_open,R.string.navigation_drawer_close);
+        toggle = ActionBarDrawerToggle(this,drawer,tolbar,
+            R.string.navigation_drawer_open,
+            R.string.navigation_drawer_close
+        );
         drawer.addDrawerListener(toggle);
         toggle.syncState();
         initViews()
-        lateinit var fragment:com.example.pantalla_registro.GroupFragment;
+        lateinit var fragment: GroupFragment;
         fragment = GroupFragment()
         if(savedInstanceState ==null){
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,fragment).commit();
@@ -63,32 +57,32 @@ class MainMenu : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLis
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
-        lateinit var fragment:com.example.pantalla_registro.GroupFragment;
-        lateinit var fragment1:com.example.pantalla_registro.MessageFragment;
-        lateinit var fragment2:com.example.pantalla_registro.ProfileFragment;
-        lateinit var fragment3:com.example.pantalla_registro.SettingsFragment;
-        lateinit var fragment4:com.example.pantalla_registro.AddGroupFragment;
+        lateinit var fragment: GroupFragment;
+        lateinit var fragment1: MessageFragment;
+        lateinit var fragment2: ProfileFragment;
+        lateinit var fragment3: SettingsFragment;
+        lateinit var fragment4: AddGroupFragment;
         fragment = GroupFragment()
-        fragment1 = com.example.pantalla_registro.MessageFragment()
+        fragment1 = MessageFragment()
         fragment2 = ProfileFragment()
         fragment3 = SettingsFragment()
         fragment4 = AddGroupFragment()
         when(item.itemId){
-            R.id.nav_groups->{
+            R.id.nav_groups ->{
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,fragment).commit();
             }
-            R.id.nav_message->{
+            R.id.nav_message ->{
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,fragment1).commit();
 
             }
-            R.id.nav_profile->{
+            R.id.nav_profile ->{
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,fragment2).commit();
             }
 
-            R.id.nav_settings->{
+            R.id.nav_settings ->{
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,fragment3).commit();
             }
-            R.id.nav_add->{
+            R.id.nav_add ->{
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,fragment4).commit();
             }
 

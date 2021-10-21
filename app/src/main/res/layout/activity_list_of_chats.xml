@@ -4,12 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ListOfChatsActivity">
+    tools:context=".activities.ListOfChatsActivity">
 
     <EditText
         android:id="@+id/newChatText"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_width="142dp"
+        android:layout_height="45dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:ems="10"
@@ -17,6 +17,7 @@
         android:inputType="textEmailAddress"
         android:minHeight="48dp"
         app:layout_constraintEnd_toStartOf="@+id/newChatButton"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -25,8 +26,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
+        android:layout_marginEnd="4dp"
         android:text="Chat"
         app:layout_constraintEnd_toStartOf="@id/logOutButton"
         app:layout_constraintTop_toTopOf="parent" />
@@ -55,5 +55,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/newChatButton"
         tools:listitem="@layout/item_chat" />
+
+    <Button
+        android:id="@+id/GroupChats"
+        android:layout_width="73dp"
+        android:layout_height="50dp"
+        android:text="Group"
+        app:layout_constraintStart_toEndOf="@+id/newChatText"
+        tools:layout_editor_absoluteY="8dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
