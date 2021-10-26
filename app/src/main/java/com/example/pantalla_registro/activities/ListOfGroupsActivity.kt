@@ -4,17 +4,21 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.pantalla_registro.models.Chat
-import com.example.pantalla_registro.adapters.ChatAdapter
+import com.example.pantalla_registro.models.GroupChat
+import com.example.pantalla_registro.adapters.GroupChatAdapter
 import com.example.pantalla_registro.R
-import com.example.pantalla_registro.models.GroupMessage
+import com.example.pantalla_registro.adapters.ChatAdapter
+import com.example.pantalla_registro.models.Chat
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
-import kotlinx.android.synthetic.main.activity_list_of_chats.*
+import kotlinx.android.synthetic.main.activity_list_of_groups.*
+import kotlinx.android.synthetic.main.activity_list_of_groups.listChatsRecyclerView
+import kotlinx.android.synthetic.main.activity_list_of_groups.logOutButton
+import kotlinx.android.synthetic.main.activity_list_of_groups.newChatButton
 import java.util.*
 
-class ListOfChatsActivity : AppCompatActivity() {
+class ListOfGroupsActivity : AppCompatActivity() {
     private var user = ""
 
     private var db = Firebase.firestore
@@ -29,35 +33,33 @@ class ListOfChatsActivity : AppCompatActivity() {
             initViews()
         }
     }
-
     private fun initViews(){
         newChatButton.setOnClickListener { newChat() }
-        GroupChats.setOnClickListener{ gotogroups()}
         logOutButton.setOnClickListener{ logOut() }
 
         listChatsRecyclerView.layoutManager = LinearLayoutManager(this)
         listChatsRecyclerView.adapter =
-            ChatAdapter { chat ->
+            GroupChatAdapter { chat ->
                 chatSelected(chat)
             }
 
         val userRef = db.collection("users").document(user)
 
-        userRef.collection("chats")
+        userRef.collection("groups")
             .get()
-            .addOnSuccessListener { chats ->
-                val listChats = chats.toObjects(Chat::class.java)
+            .addOnSuccessListener { groups ->
+                val listChats = groups.toObjects(GroupChat::class.java)
 
-                (listChatsRecyclerView.adapter as ChatAdapter).setData(listChats)
+                (listChatsRecyclerView.adapter as GroupChatAdapter).setData(listChats)
             }
 
-        userRef.collection("chats")
-            .addSnapshotListener { chats, error ->
+        userRef.collection("groups")
+            .addSnapshotListener { groups, error ->
                 if(error == null){
-                    chats?.let {
-                        val listChats = it.toObjects(Chat::class.java)
+                    groups?.let {
+                        val listChats = it.toObjects(GroupChat::class.java)
 
-                        (listChatsRecyclerView.adapter as ChatAdapter).setData(listChats)
+                        (listChatsRecyclerView.adapter as GroupChatAdapter).setData(listChats)
                     }
                 }
             }
@@ -65,9 +67,10 @@ class ListOfChatsActivity : AppCompatActivity() {
 
     }
 
-    private fun chatSelected(chat: Chat){
-        val intent = Intent(this, ChatActivity::class.java)
+    private fun chatSelected(chat: GroupChat){
+        val intent = Intent(this, GroupChatActivity::class.java)
         intent.putExtra("chatId", chat.id)
+        intent.putExtra("chatName", chat.Nombre)
         intent.putExtra("user", user)
         startActivity(intent)
     }
@@ -102,10 +105,12 @@ class ListOfChatsActivity : AppCompatActivity() {
     }
 
     private  fun gotogroups(){
-        val intent = Intent(this, ListOfGroupsActivity::class.java)
+        val intent = Intent(this, GroupActivity::class.java)
         intent.putExtra("user", user)
         startActivity(intent)
 
         finish()
     }
+
+
 }
