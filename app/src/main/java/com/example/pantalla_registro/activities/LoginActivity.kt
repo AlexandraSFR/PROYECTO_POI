@@ -6,12 +6,14 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.pantalla_registro.R
 import com.google.firebase.auth.ktx.auth
+import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.login.*
 
 class LoginActivity : AppCompatActivity() {
 
     private val auth = Firebase.auth
+    private var db = Firebase.firestore
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,6 +30,7 @@ class LoginActivity : AppCompatActivity() {
 
         if(currentUser != null){
             val intent = Intent(this, ListOfChatsActivity::class.java)
+            db.collection("users").document(currentUser.email!!).update("status","Online")
             intent.putExtra("user", currentUser.email)
             startActivity(intent)
 

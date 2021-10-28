@@ -78,7 +78,7 @@ class GroupChatActivity : AppCompatActivity() {
 
         )
 
-        db.collection("gchat").document("DaoZQ8UYJ0xa0VbekYtZ").collection("messages").document().set(message)
+        db.collection("gchat").document(chatId).collection("messages").document().set(message)
 
         messageTextField.setText("")
 

@@ -9,6 +9,7 @@ data class User (
     var email: String = "",
     var password: String = "",
     var carrera: String = "",
-    var user: String =""
+    var user: String ="",
+    var status: String =""
 
         )
