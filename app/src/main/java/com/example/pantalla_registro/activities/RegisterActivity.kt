@@ -59,6 +59,7 @@ class RegisterActivity : AppCompatActivity() {
     }
 
     private fun createUser(){
+
         val email = textCorreo.text.toString()
         val password = textPassword.text.toString()
         val chatId = UUID.randomUUID().toString()
@@ -71,93 +72,108 @@ class RegisterActivity : AppCompatActivity() {
         val apellido_user = textApellido.text.toString()
         val user_user = textUsuario.text.toString()
 
-        val registro = User(
-            id = chatId,
-            name = nombre_user,
-            apellido = apellido_user,
-            email= email,
-            password= password,
-            carrera= carrera,
-            user= user_user,
-            status = "Offline"
-        )
+        if(email.isNotEmpty() && password.isNotEmpty() &&nombre_user.isNotEmpty() && apellido_user.isNotEmpty() && user_user.isNotEmpty()) {
+
+            val registro = User(
+                id = chatId,
+                name = nombre_user,
+                apellido = apellido_user,
+                email = email,
+                password = password,
+                carrera = carrera,
+                user = user_user,
+                status = "Offline"
+            )
 
 
 
-        auth.createUserWithEmailAndPassword(email, password).addOnCompleteListener { task ->
-            if(task.isSuccessful){
+            auth.createUserWithEmailAndPassword(email, password).addOnCompleteListener { task ->
+                if (task.isSuccessful) {
 
-                Toast.makeText(applicationContext,"User created. Logging in...",Toast.LENGTH_LONG).show();
-                checkUser()
-            } else {
-                task.exception?.let {
-                    Toast.makeText(baseContext, it.message, Toast.LENGTH_LONG).show()
+                    Toast.makeText(
+                        applicationContext,
+                        "User created. Logging in...",
+                        Toast.LENGTH_LONG
+                    ).show();
+                    checkUser()
+                } else {
+                    task.exception?.let {
+                        Toast.makeText(baseContext, it.message, Toast.LENGTH_LONG).show()
+                    }
                 }
+                Sesion.email = registro.email;
+                Sesion.id = registro.id;
+                Sesion.name = registro.name;
+                Sesion.apellido = registro.apellido;
+                Sesion.email = registro.email
+                Sesion.password = registro.password
+                Sesion.carrera = registro.carrera
+                Sesion.user = registro.user
+
+                db.collection("users").document(email).set(registro)
+                when (carrera) {
+                    "LMAD" -> {
+                        val grupocarrera = GroupChat(
+                            Nombre = "LMAD",
+                            id = "DaoZQ8UYJ0xa0VbekYtZ"
+                        )
+                        db.collection("users").document(email).collection("groups")
+                            .document("DaoZQ8UYJ0xa0VbekYtZ").set(grupocarrera)
+                    }
+                    "LCC" -> {
+                        val grupocarrera = GroupChat(
+                            Nombre = "LCC",
+                            id = "tP9Cds1YEinQJwQlV20R"
+                        )
+                        db.collection("users").document(email).collection("groups")
+                            .document("tP9Cds1YEinQJwQlV20R").set(grupocarrera)
+
+                    }
+                    "LF" -> {
+                        val grupocarrera = GroupChat(
+                            Nombre = "LF",
+                            id = "ogZ0G9DY1OVKnsDaePD3"
+                        )
+                        db.collection("users").document(email).collection("groups")
+                            .document("ogZ0G9DY1OVKnsDaePD3").set(grupocarrera)
+
+                    }
+                    "LSTI" -> {
+                        val grupocarrera = GroupChat(
+                            Nombre = "LSTI",
+                            id = "9293G9mVVRhItdJ7y2c8"
+                        )
+                        db.collection("users").document(email).collection("groups")
+                            .document("9293G9mVVRhItdJ7y2c8").set(grupocarrera)
+
+                    }
+                    "LA" -> {
+                        val grupocarrera = GroupChat(
+                            Nombre = "LA",
+                            id = "QPAo6dpRyqdMVVKTJg3i"
+                        )
+                        db.collection("users").document(email).collection("groups")
+                            .document("QPAo6dpRyqdMVVKTJg3i").set(grupocarrera)
+
+                    }
+                    "LM" -> {
+                        val grupocarrera = GroupChat(
+                            Nombre = "LM",
+                            id = "akYbn8XbbaTxnujHuIG0"
+                        )
+                        db.collection("users").document(email).collection("groups")
+                            .document("akYbn8XbbaTxnujHuIG0").set(grupocarrera)
+
+                    }
+                }
+
+
             }
-            Sesion.email = registro.email;
-            Sesion.id = registro.id;
-            Sesion.name = registro.name;
-            Sesion.apellido = registro.apellido;
-            Sesion.email = registro.email
-            Sesion.password = registro.password
-            Sesion.carrera = registro.carrera
-            Sesion.user = registro.user
-
-            db.collection("users").document(email).set(registro)
-            when(carrera){
-                "LMAD"->{
-                    val grupocarrera = GroupChat(
-                        Nombre = "LMAD",
-                        id = "DaoZQ8UYJ0xa0VbekYtZ"
-                    )
-                    db.collection("users").document(email).collection("groups").document("DaoZQ8UYJ0xa0VbekYtZ").set(grupocarrera)
-                }
-                "LCC"->{
-                    val grupocarrera = GroupChat(
-                        Nombre = "LCC",
-                        id = "tP9Cds1YEinQJwQlV20R"
-                    )
-                    db.collection("users").document(email).collection("groups").document("tP9Cds1YEinQJwQlV20R").set(grupocarrera)
-
-                }
-                "LF"->{
-                    val grupocarrera = GroupChat(
-                        Nombre = "LF",
-                        id = "ogZ0G9DY1OVKnsDaePD3"
-                    )
-                    db.collection("users").document(email).collection("groups").document("ogZ0G9DY1OVKnsDaePD3").set(grupocarrera)
-
-                }
-                "LSTI"->{
-                    val grupocarrera = GroupChat(
-                        Nombre = "LSTI",
-                        id = "9293G9mVVRhItdJ7y2c8"
-                    )
-                    db.collection("users").document(email).collection("groups").document("9293G9mVVRhItdJ7y2c8").set(grupocarrera)
-
-                }
-                "LA"-> {
-                    val grupocarrera = GroupChat(
-                        Nombre = "LA",
-                        id = "QPAo6dpRyqdMVVKTJg3i"
-                    )
-                    db.collection("users").document(email).collection("groups").document("QPAo6dpRyqdMVVKTJg3i").set(grupocarrera)
-
-                }
-                "LM"-> {
-                    val grupocarrera = GroupChat(
-                        Nombre = "LM",
-                        id = "akYbn8XbbaTxnujHuIG0"
-                    )
-                    db.collection("users").document(email).collection("groups").document("akYbn8XbbaTxnujHuIG0").set(grupocarrera)
-
-                }
-            }
-
 
         }
-
-
+        else{
+            Toast.makeText(applicationContext,"Favor de llenar todos los campos",Toast.LENGTH_SHORT).show();
+        }
 
 
 
