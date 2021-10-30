@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="190dp"
+        android:layout_height="189dp"
+        android:layout_marginStart="110dp"
+        android:layout_marginTop="124dp"
+        android:layout_marginEnd="111dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/profile_picture"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/textUsuario"
+        android:layout_width="149dp"
+        android:layout_height="28dp"
+        android:layout_marginTop="24dp"
+        android:text="Usuario"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textNombre"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/textNombre"
+        android:layout_width="316dp"
+        android:layout_height="29dp"
+        android:layout_marginTop="24dp"
+        android:text="Nombre"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/textCarrera"
+        android:layout_width="149dp"
+        android:layout_height="28dp"
+        android:layout_marginTop="20dp"
+        android:text="Carrera"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textUsuario"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/textCorreo"
+        android:layout_width="312dp"
+        android:layout_height="26dp"
+        android:layout_marginTop="20dp"
+        android:text="Correo"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textCarrera"
+        app:layout_constraintVertical_bias="0.009"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/logOut"
+        android:layout_width="125dp"
+        android:layout_height="48dp"
+        android:background="@drawable/button_rounded"
+        android:text="Cerrar sesion"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textCorreo" />
+
+    <Button
+        android:id="@+id/goChat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:background="@drawable/button_rounded"
+
+        android:text="Chat"
+        app:layout_constraintBottom_toTopOf="@+id/imageView"
+        app:layout_constraintEnd_toStartOf="@+id/goGroup"
+        app:layout_constraintHorizontal_bias="0.462"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/goGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="68dp"
+        android:background="@drawable/button_rounded"
+        android:text="Group"
+        app:layout_constraintBottom_toTopOf="@+id/imageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

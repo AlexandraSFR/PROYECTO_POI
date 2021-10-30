@@ -4,12 +4,9 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.pantalla_registro.models.Chat
-import com.example.pantalla_registro.adapters.ChatAdapter
 import com.example.pantalla_registro.R
 import com.example.pantalla_registro.adapters.GroupAdapter
 import com.example.pantalla_registro.models.GroupMessage
-import com.example.pantalla_registro.models.Message
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.Query
 import com.google.firebase.firestore.ktx.firestore
@@ -44,9 +41,9 @@ class GroupActivity : AppCompatActivity() {
     private fun initViews(){
         messagesRecylerView.layoutManager = LinearLayoutManager(this)
         messagesRecylerView.adapter = GroupAdapter("lmad");
-        Chat.setOnClickListener { gotoChats() }
+        Group.setOnClickListener { gotoChats() }
 
-        LogOut.setOnClickListener{ logOut() }
+
         sendMessageButton.setOnClickListener { sendMessage() }
 
 
@@ -95,5 +92,18 @@ class GroupActivity : AppCompatActivity() {
         startActivity(intent)
 
         finish()
+    }
+
+    override fun onPause() {
+        super.onPause()
+        db.collection("users").document(user).update("status","Offline")
+
+    }
+
+    override fun onResume(){
+        super.onResume()
+        db.collection("users").document(user).update("status","Online")
+
+
     }
 }

@@ -30,8 +30,8 @@ class GroupAdapter(private val group : String) : RecyclerView.Adapter<GroupAdapt
     override fun onBindViewHolder(holder: GroupChatViewHolder, position: Int) {
 
         holder.itemView.Email.text = Postmessage[position].from
-        holder.itemView.Date.text = Postmessage[position].dob.toString()
-        holder.itemView.Message.text = Postmessage[position].message
+        holder.itemView.Fecha.text = Postmessage[position].dob.toString()
+        holder.itemView.Mensaje.text = Postmessage[position].message
 
     }
 

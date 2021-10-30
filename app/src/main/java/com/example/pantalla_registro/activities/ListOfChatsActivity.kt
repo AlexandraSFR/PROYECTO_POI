@@ -7,12 +7,10 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.pantalla_registro.models.Chat
 import com.example.pantalla_registro.adapters.ChatAdapter
 import com.example.pantalla_registro.R
-import com.example.pantalla_registro.models.GroupMessage
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.activity_list_of_chats.*
-import java.util.*
 
 class ListOfChatsActivity : AppCompatActivity() {
     private var user = ""
@@ -31,9 +29,9 @@ class ListOfChatsActivity : AppCompatActivity() {
     }
 
     private fun initViews(){
-        newChatButton.setOnClickListener { newChat() }
+        gotoChats.setOnClickListener { newChat() }
         GroupChats.setOnClickListener{ gotogroups()}
-        logOutButton.setOnClickListener{ logOut() }
+        profileButton.setOnClickListener{ profile() }
 
         listChatsRecyclerView.layoutManager = LinearLayoutManager(this)
         listChatsRecyclerView.adapter =
@@ -65,36 +63,35 @@ class ListOfChatsActivity : AppCompatActivity() {
 
     }
 
+    private fun profile() {
+        val intent = Intent(this, ProfileActivity::class.java)
+        intent.putExtra("user", user)
+        startActivity(intent)
+
+        finish()
+    }
+
     private fun chatSelected(chat: Chat){
         val intent = Intent(this, ChatActivity::class.java)
         intent.putExtra("chatId", chat.id)
         intent.putExtra("user", user)
+        intent.putExtra("user1",chat.users[0])
+        intent.putExtra("user2",chat.users[1])
         startActivity(intent)
     }
 
     private fun newChat(){
-        val chatId = UUID.randomUUID().toString()
-        val otherUser = newChatText.text.toString()
-        val users = listOf(user, otherUser)
-
-        val chat = Chat(
-            id = chatId,
-            name = "Chat with $otherUser",
-            users = users
-        )
-
-        db.collection("chats").document(chatId).set(chat)
-        db.collection("users").document(user).collection("chats").document(chatId).set(chat)
-        db.collection("users").document(otherUser).collection("chats").document(chatId).set(chat)
-
-        val intent = Intent(this, ChatActivity::class.java)
-        intent.putExtra("chatId", chatId)
+        val intent = Intent(this, CreateChatActivity::class.java)
         intent.putExtra("user", user)
         startActivity(intent)
+
+        finish()
     }
 
     private fun logOut(){
+
         FirebaseAuth.getInstance().signOut()
+        db.collection("users").document(user).update("status","Offline")
         val intent = Intent(this,LoginActivity::class.java)
         intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT)
         startActivity(intent)
@@ -107,5 +104,18 @@ class ListOfChatsActivity : AppCompatActivity() {
         startActivity(intent)
 
         finish()
+    }
+
+    override fun onPause() {
+        super.onPause()
+        db.collection("users").document(user).update("status","Offline")
+
+    }
+
+    override fun onResume(){
+        super.onResume()
+        db.collection("users").document(user).update("status","Online")
+
+
     }
 }

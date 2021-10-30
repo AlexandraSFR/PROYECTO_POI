@@ -10,6 +10,7 @@ data class User (
     var password: String = "",
     var carrera: String = "",
     var user: String ="",
-    var status: String =""
+    var status: String ="",
+    var addGroup: Boolean = false
 
         )

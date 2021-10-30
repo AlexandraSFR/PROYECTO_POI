@@ -18,6 +18,8 @@ import com.example.pantalla_registro.models.Chat
 import com.google.android.material.navigation.NavigationView
 import com.google.firebase.database.*
 import kotlinx.android.synthetic.main.activity_list_of_chats.*
+import kotlinx.android.synthetic.main.activity_list_of_chats.listChatsRecyclerView
+import kotlinx.android.synthetic.main.fragment_message.*
 import java.util.*
 
 
@@ -40,7 +42,7 @@ class MessageFragment : Fragment(), NavigationView.OnNavigationItemSelectedListe
     }
 
     private fun initViews(view: View) {
-        newChatButton = view.findViewById(R.id.newChatButton);
+        newChatButton = view.findViewById(R.id.gotoChats);
         newChatButton.setOnClickListener { newChat() }
 
         listChatsRecyclerView.layoutManager = LinearLayoutManager(context)

@@ -28,6 +28,7 @@
         android:layout_marginRight="8dp"
         android:layout_marginBottom="16dp"
         android:text="Enviar"
+        android:background="@drawable/button_rounded"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -41,25 +42,42 @@
         app:layout_constraintBottom_toTopOf="@+id/messageTextField"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/LogOut"
-        app:layout_constraintVertical_bias="0.878"
+        app:layout_constraintTop_toBottomOf="@+id/cardView"
         tools:listitem="@layout/item_group" />
 
     <Button
-        android:id="@+id/Chat"
-        android:layout_width="91dp"
-        android:layout_height="52dp"
-        android:layout_marginEnd="16dp"
-        android:text="Chat"
+        android:id="@+id/Group"
+        android:layout_width="95dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/button_rounded"
+        android:text="Groups"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/LogOut"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:text="Logout"
-        app:layout_constraintEnd_toStartOf="@+id/Chat"
-        app:layout_constraintTop_toTopOf="parent" />
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="295dp"
+        android:layout_height="46dp"
+        app:layout_constraintEnd_toStartOf="@+id/Group"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="296dp"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/groupName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nombre del grupo"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.069"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>

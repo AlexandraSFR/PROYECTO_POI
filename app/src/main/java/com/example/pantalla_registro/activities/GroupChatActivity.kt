@@ -4,12 +4,9 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.pantalla_registro.models.Chat
-import com.example.pantalla_registro.adapters.ChatAdapter
 import com.example.pantalla_registro.R
 import com.example.pantalla_registro.adapters.GroupAdapter
 import com.example.pantalla_registro.models.GroupMessage
-import com.example.pantalla_registro.models.Message
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.Query
 import com.google.firebase.firestore.ktx.firestore
@@ -48,9 +45,8 @@ class GroupChatActivity : AppCompatActivity() {
     private fun initViews(){
         messagesRecylerView.layoutManager = LinearLayoutManager(this)
         messagesRecylerView.adapter = GroupAdapter(chatId);
-        Chat.setOnClickListener { gotoChats() }
+        Group.setOnClickListener { gotoGroups() }
 
-        LogOut.setOnClickListener{ logOut() }
         sendMessageButton.setOnClickListener { sendMessage() }
 
 
@@ -85,19 +81,24 @@ class GroupChatActivity : AppCompatActivity() {
 
     }
 
-    private fun logOut(){
-        FirebaseAuth.getInstance().signOut()
-        val intent = Intent(this,LoginActivity::class.java)
-        intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT)
-        startActivity(intent)
-        finish()
-    }
-
-    private fun gotoChats(){
-        val intent = Intent(this, ListOfChatsActivity::class.java)
+    private fun gotoGroups(){
+        val intent = Intent(this, ListOfGroupsActivity::class.java)
         intent.putExtra("user", user)
         startActivity(intent)
 
         finish()
     }
+    override fun onPause() {
+        super.onPause()
+        db.collection("users").document(user).update("status","Offline")
+
+    }
+
+    override fun onResume(){
+        super.onResume()
+        db.collection("users").document(user).update("status","Online")
+
+
+    }
+
 }

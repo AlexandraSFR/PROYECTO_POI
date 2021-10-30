@@ -19,33 +19,48 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activities.GroupActivity"
-            android:theme="@style/AppTheme.NoActionBar"/>
-        <activity android:name=".activities.GroupChatActivity"
-            android:theme="@style/AppTheme.NoActionBar"/>
-        <activity android:name=".activities.ListOfGroupsActivity"
-            android:theme="@style/AppTheme.NoActionBar"/>
-        <activity android:name=".Login"
-            android:theme="@style/AppTheme.NoActionBar"/>
-        <activity android:name=".activities.LoginActivity"
-            android:theme="@style/AppTheme.NoActionBar"/>
-        <activity android:name=".activities.ListOfChatsActivity"
-            android:theme="@style/AppTheme.NoActionBar"/>
-        <activity android:name=".Fragment.MainMenu"
-            android:theme="@style/AppTheme.NoActionBar">
-        </activity>
-        <activity android:name=".activities.ChatActivity"
-            android:theme="@style/AppTheme.NoActionBar">
-        </activity>
-        <activity android:name=".Fragment.ProfileFragment"
-            android:theme="@style/AppTheme.NoActionBar">
-        </activity>
-        <activity android:name=".Fragment.MessageFragment"
-            android:theme="@style/AppTheme.NoActionBar">
-        </activity>
-        <activity android:name=".Fragment.SettingsFragment"
-            android:theme="@style/AppTheme.NoActionBar">
-        </activity>
+        <activity
+            android:name=".activities.GroupActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activities.GroupChatActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activities.ListOfGroupsActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Login"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activities.LoginActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activities.ListOfChatsActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activities.CreateChatActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activities.NewGroupActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activities.ProfileActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Fragment.MainMenu"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".activities.ChatActivity"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".Fragment.ProfileFragment"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".Fragment.MessageFragment"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".Fragment.SettingsFragment"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
