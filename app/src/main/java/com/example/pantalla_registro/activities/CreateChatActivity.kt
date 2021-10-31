@@ -3,6 +3,7 @@ package com.example.pantalla_registro.activities
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import com.example.pantalla_registro.models.Chat
 import com.example.pantalla_registro.R
 import com.google.firebase.firestore.ktx.firestore
@@ -41,20 +42,28 @@ class CreateChatActivity : AppCompatActivity() {
         val otherUser = GroupName.text.toString()
         val users = listOf(user, otherUser)
 
-        val chat = Chat(
-            id = chatId,
-            name = "Chat with $otherUser",
-            users = users
-        )
+        if(otherUser.isNotEmpty()) {
 
-        db.collection("chats").document(chatId).set(chat)
-        db.collection("users").document(user).collection("chats").document(chatId).set(chat)
-        db.collection("users").document(otherUser).collection("chats").document(chatId).set(chat)
+            val chat = Chat(
+                id = chatId,
+                name = "Chat with $otherUser",
+                users = users
+            )
 
-        val intent = Intent(this, ChatActivity::class.java)
-        intent.putExtra("chatId", chatId)
-        intent.putExtra("user", user)
-        startActivity(intent)
+            db.collection("chats").document(chatId).set(chat)
+            db.collection("users").document(user).collection("chats").document(chatId).set(chat)
+            db.collection("users").document(otherUser).collection("chats").document(chatId)
+                .set(chat)
+
+            val intent = Intent(this, ChatActivity::class.java)
+            intent.putExtra("chatId", chatId)
+            intent.putExtra("user", user)
+            startActivity(intent)
+
+        }
+        else{
+            Toast.makeText(applicationContext, "Por favor ingrese un Email", Toast.LENGTH_SHORT).show()
+        }
     }
 
     private fun gotoChats(){
