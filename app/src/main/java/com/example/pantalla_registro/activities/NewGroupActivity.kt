@@ -3,6 +3,7 @@ package com.example.pantalla_registro.activities
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import androidx.constraintlayout.widget.Group
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.pantalla_registro.R
@@ -69,19 +70,25 @@ class NewGroupActivity : AppCompatActivity() {
     private fun creategroup() {
         val groupId = UUID.randomUUID().toString()
         val groupName :String = GroupName.text.toString()
-        val grupo = GroupChat(
-            Nombre = groupName,
-            id = groupId
-        )
-        db.collection("gchat").document(groupId).set(grupo)
-        (userRecyclerView.adapter as AddUserAdapter).getAddList(groupId,groupName,user)
-        db.collection("users").document(user).collection("groups").document(groupId).set(grupo)
 
-        val intent = Intent(this, ListOfGroupsActivity::class.java)
-        intent.putExtra("user", user)
-        startActivity(intent)
+        if(groupName.isNotEmpty()) {
+            val grupo = GroupChat(
+                Nombre = groupName,
+                id = groupId
+            )
+            db.collection("gchat").document(groupId).set(grupo)
+            (userRecyclerView.adapter as AddUserAdapter).getAddList(groupId, groupName, user)
+            db.collection("users").document(user).collection("groups").document(groupId).set(grupo)
 
-        finish()
+            val intent = Intent(this, ListOfGroupsActivity::class.java)
+            intent.putExtra("user", user)
+            startActivity(intent)
+
+            finish()
+        }
+        else{
+            Toast.makeText(applicationContext, "Por favor ingrese el Nombre del Grupo", Toast.LENGTH_SHORT).show()
+        }
     }
 
     private fun userSelected(user: User) {
