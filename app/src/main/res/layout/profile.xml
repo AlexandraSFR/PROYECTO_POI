@@ -47,7 +47,7 @@
         tools:ignore="MissingConstraints" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/profilePicSelect"
         android:layout_width="190dp"
         android:layout_height="189dp"
         android:layout_marginStart="110dp"
@@ -69,7 +69,7 @@
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintTop_toBottomOf="@+id/profilePicSelect"
         tools:ignore="MissingConstraints" />
 
     <Button

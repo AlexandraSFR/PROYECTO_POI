@@ -8,27 +8,24 @@
 
     <EditText
         android:id="@+id/messageTextField"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
+        android:layout_width="236dp"
+        android:layout_height="48dp"
         android:layout_marginBottom="16dp"
         android:ems="10"
         android:hint="Escribe Mensaje"
         android:inputType="textPersonName"
         android:minHeight="48dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/sendMessageButton"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toStartOf="@+id/sendMessageButton" />
 
     <Button
         android:id="@+id/sendMessageButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="68dp"
+        android:layout_height="48dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
         android:layout_marginBottom="16dp"
-        android:text="Enviar"
         android:background="@drawable/button_rounded"
+        android:text="Enviar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -48,11 +45,13 @@
     <Button
         android:id="@+id/Group"
         android:layout_width="95dp"
-        android:layout_height="45dp"
+        android:layout_height="48dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
+        android:layout_marginBottom="5dp"
         android:background="@drawable/button_rounded"
         android:text="Groups"
+        app:layout_constraintBottom_toTopOf="@+id/messagesRecylerView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -60,6 +59,8 @@
         android:id="@+id/cardView"
         android:layout_width="295dp"
         android:layout_height="46dp"
+        android:layout_marginBottom="9dp"
+        app:layout_constraintBottom_toTopOf="@+id/messagesRecylerView"
         app:layout_constraintEnd_toStartOf="@+id/Group"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -67,6 +68,21 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="296dp"
             android:layout_height="match_parent">
+
+            <ImageButton
+                android:id="@+id/locationButton"
+                android:layout_width="41dp"
+                android:layout_height="42dp"
+                android:background="@drawable/button_rounded"
+                android:minHeight="48dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.976"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.6"
+                app:srcCompat="@drawable/ic_location_2"
+                tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
             <TextView
                 android:id="@+id/groupName"
@@ -80,4 +96,33 @@
                 app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
+
+    <ImageButton
+        android:id="@+id/ImageButton"
+        android:layout_width="41dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/button_rounded"
+        android:minHeight="48dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/FileButton"
+        app:layout_constraintHorizontal_bias="0.161"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/ic_image"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+    <ImageButton
+        android:id="@+id/FileButton"
+        android:layout_width="41dp"
+        android:layout_height="43dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/button_rounded"
+        android:minHeight="48dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/messageTextField"
+        app:srcCompat="@drawable/ic_file"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 </androidx.constraintlayout.widget.ConstraintLayout>

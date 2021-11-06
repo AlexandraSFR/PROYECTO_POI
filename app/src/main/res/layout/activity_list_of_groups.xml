@@ -11,11 +11,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:text="Chat"
+        android:layout_marginEnd="16dp"
         android:background="@drawable/button_rounded"
-        app:layout_constraintEnd_toStartOf="@id/profileButton"
+        android:text="Chat"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
@@ -26,7 +25,7 @@
         android:layout_marginEnd="8dp"
         android:background="@drawable/button_rounded"
         android:text="Perfil"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/gotoChats"
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
@@ -47,12 +46,14 @@
         android:id="@+id/goToCreate"
         android:layout_width="102dp"
         android:layout_height="49dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
+        android:layout_marginEnd="81dp"
         android:background="@drawable/button_rounded"
         android:text="Crear Grupo"
         app:layout_constraintBottom_toTopOf="@+id/listChatsRecyclerView"
-        app:layout_constraintEnd_toStartOf="@+id/gotoChats"
-        app:layout_constraintHorizontal_bias="0.124"
+        app:layout_constraintEnd_toStartOf="@+id/profileButton"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />

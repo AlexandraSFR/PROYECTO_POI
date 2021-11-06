@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/ArchivoArchivo"
+        android:layout_width="266dp"
+        android:layout_height="276dp"
+        app:srcCompat="@drawable/ic_file"
+        tools:layout_editor_absoluteX="72dp"
+        tools:layout_editor_absoluteY="293dp" />
+
+    <Button
+        android:id="@+id/goBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Volver"
+        android:background="@drawable/button_rounded"
+        tools:layout_editor_absoluteX="284dp"
+        tools:layout_editor_absoluteY="32dp" />
+
+    <Button
+        android:id="@+id/Upload"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Subir"
+        android:background="@drawable/button_rounded"
+        tools:layout_editor_absoluteX="161dp"
+        tools:layout_editor_absoluteY="615dp" />
+
+    <EditText
+        android:id="@+id/ArchivoMensaje"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Mensaje"
+        tools:layout_editor_absoluteX="101dp"
+        tools:layout_editor_absoluteY="179dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -11,6 +11,8 @@ data class User (
     var carrera: String = "",
     var user: String ="",
     var status: String ="",
-    var addGroup: Boolean = false
+    var addGroup: Boolean = false,
+    var encrypted: Boolean = false,
+    var pfp: String =""
 
         )

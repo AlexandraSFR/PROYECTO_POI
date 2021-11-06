@@ -76,15 +76,23 @@ class NewGroupActivity : AppCompatActivity() {
                 Nombre = groupName,
                 id = groupId
             )
-            db.collection("gchat").document(groupId).set(grupo)
-            (userRecyclerView.adapter as AddUserAdapter).getAddList(groupId, groupName, user)
-            db.collection("users").document(user).collection("groups").document(groupId).set(grupo)
+            var hasUsers :Boolean;
+            hasUsers = (userRecyclerView.adapter as AddUserAdapter).getAddList(groupId, groupName, user)
+            if(hasUsers==true){
+                db.collection("gchat").document(groupId).set(grupo)
 
-            val intent = Intent(this, ListOfGroupsActivity::class.java)
-            intent.putExtra("user", user)
-            startActivity(intent)
+                db.collection("users").document(user).collection("groups").document(groupId).set(grupo)
 
-            finish()
+                val intent = Intent(this, ListOfGroupsActivity::class.java)
+                intent.putExtra("user", user)
+                startActivity(intent)
+
+                finish()
+            }
+            else{
+                Toast.makeText(applicationContext, "Por favor ingrese gente a su grupo", Toast.LENGTH_SHORT).show()
+            }
+
         }
         else{
             Toast.makeText(applicationContext, "Por favor ingrese el Nombre del Grupo", Toast.LENGTH_SHORT).show()

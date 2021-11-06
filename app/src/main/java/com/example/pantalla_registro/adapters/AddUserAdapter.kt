@@ -56,9 +56,10 @@ class AddUserAdapter(val userClick: (User) -> Unit) : RecyclerView.Adapter<AddUs
         return Users.size
     }
 
-    fun getAddList(groupId: String, groupName:String,userActual :String): MutableList<User> {
+    fun getAddList(groupId: String, groupName:String,userActual :String): Boolean{
         var usersG : MutableList<User> = mutableListOf()
-
+        var hasUsers:Boolean;
+        hasUsers=false;
         val grupo = GroupChat(
             Nombre = groupName,
             id = groupId
@@ -66,11 +67,12 @@ class AddUserAdapter(val userClick: (User) -> Unit) : RecyclerView.Adapter<AddUs
         for(u in Users){
             if(u.addGroup==true){
                 if(userActual!=u.email){
+                    hasUsers=true;
                     db.collection("users").document(u.email).collection("groups").document(groupId).set(grupo)
                 }
             }
         }
-        return usersG
+        return hasUsers
     }
 
     class GroupUserViewHolder(itemView: View): RecyclerView.ViewHolder(itemView)
