@@ -150,9 +150,15 @@ class ChatActivity : AppCompatActivity() {
             image = ""
         )
 
-        db.collection("chats").document(chatId).collection("messages").document().set(message)
+        if(message.message.isNotEmpty()) {
 
-        messageTextField.setText("")
+            db.collection("chats").document(chatId).collection("messages").document().set(message)
+
+            messageTextField.setText("")
+        }
+        else{
+            Toast.makeText(applicationContext,"Ingrese un mensaje para mandar",Toast.LENGTH_SHORT).show();
+        }
 
 
     }

@@ -113,9 +113,15 @@ class GroupChatActivity : AppCompatActivity() {
 
         )
 
-        db.collection("gchat").document(chatId).collection("messages").document().set(message)
+        if(message.message.isNotEmpty()) {
+            db.collection("gchat").document(chatId).collection("messages").document().set(message)
 
-        messageTextField.setText("")
+            messageTextField.setText("")
+        }
+        else{
+            Toast.makeText(applicationContext,"Ingrese un mensaje para mandar",Toast.LENGTH_SHORT).show();
+        }
+
 
 
     }
