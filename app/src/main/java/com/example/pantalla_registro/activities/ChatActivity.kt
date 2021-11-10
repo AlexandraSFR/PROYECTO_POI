@@ -288,8 +288,6 @@ class ChatActivity : AppCompatActivity() {
         return CountryName;
     }
 
-
-
     override fun onPause() {
         super.onPause()
         db.collection("users").document(user).update("status","Offline")
