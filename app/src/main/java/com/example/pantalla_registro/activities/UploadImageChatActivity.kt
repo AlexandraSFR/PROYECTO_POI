@@ -135,5 +135,29 @@ class UploadImageChatActivity : AppCompatActivity() {
         startActivity(intent)
     }
 
+    override fun onPause() {
+        super.onPause()
+        db.collection("users").document(user).update("status","Offline")
+
+    }
+
+    override fun onResume(){
+        super.onResume()
+        db.collection("users").document(user).update("status","Online")
+
+
+    }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        val intent = Intent(this, ChatActivity::class.java)
+        intent.putExtra("chatId",chatId)
+        intent.putExtra("user", user)
+        intent.putExtra("user1",user1)
+        intent.putExtra("user2",user2)
+        startActivity(intent)
+
+    }
+
 
 }

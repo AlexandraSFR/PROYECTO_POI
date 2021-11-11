@@ -255,4 +255,13 @@ class GroupChatActivity : AppCompatActivity() {
 
     }
 
+    override fun onBackPressed() {
+        super.onBackPressed()
+        val intent = Intent(this, ListOfGroupsActivity::class.java)
+        intent.putExtra("user", user)
+        startActivity(intent)
+
+        finish()
+    }
+
 }

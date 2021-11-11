@@ -306,4 +306,13 @@ class ChatActivity : AppCompatActivity() {
 
 
     }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        val intent = Intent(this, ListOfChatsActivity::class.java)
+        intent.putExtra("user", user)
+        startActivity(intent)
+
+        finish()
+    }
 }
