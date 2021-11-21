@@ -25,6 +25,7 @@ import com.example.pantalla_registro.models.User
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationCallback
 import com.google.android.gms.location.LocationResult
+import com.google.android.gms.location.LocationServices
 import com.google.firebase.firestore.Query
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
@@ -67,7 +68,7 @@ class ChatActivity : AppCompatActivity() {
     }
 
     private fun initViews(){
-
+        fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this);
         if(user1==user){
             Name.setText(user2);
 

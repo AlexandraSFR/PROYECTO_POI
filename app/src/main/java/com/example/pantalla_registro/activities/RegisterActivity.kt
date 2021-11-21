@@ -252,5 +252,13 @@ class RegisterActivity : AppCompatActivity() {
         finish()
     }
 
+    override fun onBackPressed() {
+        val intent = Intent(this, LoginActivity::class.java)
+        intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT)
+        startActivity(intent)
+
+        finish()
+    }
+
 
 }
